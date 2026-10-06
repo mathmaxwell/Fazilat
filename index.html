@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akusherlik va ginekologiya — test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" class="app"></main>
+
+  <noscript>
+    <p class="app">Test ishlashi uchun brauzerda JavaScript yoqilgan bo'lishi kerak.</p>
+  </noscript>
+
+  <script>
+    // savollar.js da yozuv xatosi bo'lsa, qator raqamini ushlab qolish uchun
+    window.addEventListener("error", function (e) {
+      if (e.filename && e.filename.indexOf("savollar.js") !== -1) {
+        window.__savollarXatosi = { line: e.lineno, message: e.message };
+      }
+    });
+  </script>
+  <script src="savollar.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
