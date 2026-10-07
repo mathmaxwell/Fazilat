@@ -114,6 +114,42 @@ textarea:focus {
 .facts { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 8px; }
 .facts li { padding: 10px 14px; background: var(--bg); border-radius: 8px; }
 
+/* ---------- Выбор языка и темы ---------- */
+.lang-title { margin-bottom: 2px; }
+.choices { display: grid; gap: 12px; }
+.choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 18px;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--card);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.choice:hover { border-color: var(--primary); background: var(--primary-soft); }
+.choice-title { display: block; font-size: 1.1rem; font-weight: 700; }
+.choice-sub { display: block; margin-top: 2px; font-size: 0.92rem; color: var(--muted); }
+.choice-arrow { flex: none; font-size: 1.3rem; color: var(--primary); }
+.back-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+.back-link:hover { text-decoration: underline; }
+
 .error-card h1 { color: var(--bad); }
 .error-card li { margin-bottom: 6px; }
 
