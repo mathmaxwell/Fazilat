@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hamshiralar testi · Тест для медсестёр</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <main id="app" class="app"></main>
@@ -18,7 +18,7 @@
     // Savol fayllari o'zini shu funksiya orqali qo'shadi. · Файлы вопросов добавляют себя через эту функцию.
     var QUESTION_BANK = [];
     function addQuestions(data) {
-      var src = document.currentScript ? document.currentScript.src : "";
+      var src = (document.currentScript ? document.currentScript.src : "").split(/[?#]/)[0];
       data.file = decodeURI(src.slice(src.lastIndexOf("/questions/") + 1));
       QUESTION_BANK.push(data);
     }
@@ -27,18 +27,23 @@
     // Чтобы показать номер строки, если в файле ошибка записи.
     var LOAD_ERRORS = [];
     window.addEventListener("error", function (e) {
-      var m = e.filename && e.filename.match(/\/(settings\.js|questions\/[^\/]+\.js)$/);
+      var m = (e.filename || "").split(/[?#]/)[0].match(/\/(settings\.js|questions\/[^\/]+\.js)$/);
       if (m) LOAD_ERRORS.push({ file: decodeURI(m[1]), line: e.lineno, message: e.message });
     });
   </script>
 
   <!-- Yangi mavzu qo'shish uchun questions/ papkasiga fayl qo'shing va shu yerga qator yozing.
-       Чтобы добавить новую тему, создайте файл в папке questions/ и добавьте строку сюда. -->
-  <script src="settings.js"></script>
-  <script src="questions/uz-obstetrics.js"></script>
-  <script src="questions/uz-genetics.js"></script>
-  <script src="questions/ru-obstetrics.js"></script>
-  <script src="questions/ru-genetics.js"></script>
-  <script src="app.js"></script>
+       Чтобы добавить новую тему, создайте файл в папке questions/ и добавьте строку сюда.
+
+       ?v=3 — versiya. Saytdagi fayllarni yangilagach, raqamni oshiring (v=4, v=5 ...),
+       shunda brauzerlar eski nusxani emas, yangisini yuklaydi.
+       ?v=3 — версия. После обновления файлов на сайте увеличьте число (v=4, v=5 ...),
+       чтобы браузеры загрузили новые файлы, а не старые из кэша. -->
+  <script src="settings.js?v=3"></script>
+  <script src="questions/uz-obstetrics.js?v=3"></script>
+  <script src="questions/uz-genetics.js?v=3"></script>
+  <script src="questions/ru-obstetrics.js?v=3"></script>
+  <script src="questions/ru-genetics.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

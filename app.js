@@ -303,7 +303,7 @@
 
   function findErrors() {
     const errors = [];
-    const scripts = [...document.querySelectorAll("script[src]")].map((s) => s.getAttribute("src"));
+    const scripts = [...document.querySelectorAll("script[src]")].map((s) => s.getAttribute("src").split(/[?#]/)[0]);
     if (typeof SETTINGS === "undefined" && scripts.some((src) => /(^|\/)settings\.js$/.test(src))) {
       errors.push(notLoadedText("settings.js"));
     }
