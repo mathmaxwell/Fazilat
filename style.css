@@ -55,7 +55,7 @@ h2 { font-size: 1.25rem; line-height: 1.3; margin: 0 0 16px; }
 .subtitle { color: var(--muted); margin: 0 0 20px; }
 .muted { color: var(--muted); }
 
-/* ---------- Tugmalar va maydonlar ---------- */
+/* ---------- Кнопки и поля ---------- */
 .btn {
   font: inherit;
   font-weight: 600;
@@ -96,7 +96,7 @@ textarea:focus {
 
 .field-error { color: var(--bad); margin: 6px 0 0; font-size: 0.92rem; }
 
-/* ---------- Boshlash sahifasi ---------- */
+/* ---------- Стартовая страница ---------- */
 .start-card { max-width: 560px; margin: 6vh auto 0; }
 
 .emblem {
@@ -117,7 +117,7 @@ textarea:focus {
 .error-card h1 { color: var(--bad); }
 .error-card li { margin-bottom: 6px; }
 
-/* ---------- Savol sahifasi ---------- */
+/* ---------- Страница вопроса ---------- */
 .topbar {
   display: flex;
   align-items: center;
@@ -290,7 +290,7 @@ textarea.answer { min-height: 240px; resize: vertical; line-height: 1.55; }
 
 .pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; }
 
-/* ---------- Natija sahifasi ---------- */
+/* ---------- Страница результатов ---------- */
 .meta {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -346,7 +346,7 @@ textarea.answer { min-height: 240px; resize: vertical; line-height: 1.55; }
 }
 .grade-line { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; }
 
-/* ---------- Kichik ekranlar ---------- */
+/* ---------- Маленькие экраны ---------- */
 @media (max-width: 600px) {
   body { font-size: 16px; }
   .card { padding: 20px 16px; }
@@ -356,7 +356,7 @@ textarea.answer { min-height: 240px; resize: vertical; line-height: 1.55; }
   .score-big { font-size: 2rem; }
 }
 
-/* ---------- Chop etish ---------- */
+/* ---------- Печать ---------- */
 @media print {
   body { background: #fff; font-size: 11.5pt; }
   .app { max-width: none; padding: 0; }
